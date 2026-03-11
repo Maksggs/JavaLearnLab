@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.javalearnlab.R;
 
-public class Test1Level1 extends AppCompatActivity {
+public class Test1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -5,5 +5,4 @@
     <solid android:color="@color/button_exit" />
     <!-- Скругление углов (опционально) -->
     <corners android:radius="32dp" />
-
 </shape>

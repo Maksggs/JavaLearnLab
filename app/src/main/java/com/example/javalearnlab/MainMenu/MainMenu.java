@@ -1,4 +1,4 @@
-package com.example.javalearnlab.main_menu;
+package com.example.javalearnlab.MainMenu;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.javalearnlab.R;
 import com.example.javalearnlab.Topic1.Theory;
 
-public class Menu extends AppCompatActivity {
+public class MainMenu extends AppCompatActivity {
     Button buttonLvl1;
     Button buttonLvl2;
     Button buttonLvl3;
@@ -28,7 +28,7 @@ public class Menu extends AppCompatActivity {
         buttonLvl1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Menu.this, Theory.class);
+                Intent intent = new Intent(MainMenu.this, Theory.class);
                 startActivity(intent);
             }
         });

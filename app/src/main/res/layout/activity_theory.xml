@@ -1,85 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/menu_bg"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context=".Topic1.Theory">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        android:background="@color/background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        >
 
         <LinearLayout
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/menu_bg"
+            android:gravity="center_vertical"
             android:orientation="vertical"
-            android:background="@color/menu_bg">
+            android:visibility="visible">
 
             <ImageButton
-                android:id="@+id/exit_test"
+                android:id="@+id/button_exit_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="10dp"
                 android:background="@drawable/button_bg_exit"
+                android:contentDescription="@string/text_exit"
+                android:paddingHorizontal="32dp"
+                android:paddingVertical="10dp"
                 android:src="@drawable/arrow_exit"
-                android:paddingVertical="8dp"
-                android:paddingHorizontal="30dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="10dp"
-                android:contentDescription="Выход"
-                app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-                app:layout_constraintStart_toStartOf="parent">
+                android:text=""
 
-            </ImageButton>
+                android:visibility="visible" />
 
+        </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="7dp"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="10dp"
+            android:background="@color/background"
             android:orientation="vertical"
-            android:background="@color/background">
-
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="16dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/text_theory_level1"
                 android:textColor="@color/text"
-                android:textSize="52sp" />
+                android:textSize="32sp" />
 
             <Button
-                android:id="@+id/start_test"
+                android:id="@+id/button_start_test"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="25dp"
                 android:backgroundTint="@color/button"
                 android:gravity="center_horizontal"
-                android:text="@string/menu_text_start"
+                android:text="@string/text_start"
                 android:textColor="@color/text"
-                android:textSize="23sp" />
+                android:textSize="16sp" />
 
         </LinearLayout>
 
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
 
-
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

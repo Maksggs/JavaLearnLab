@@ -2,7 +2,9 @@
     <string name="app_name">JavaLearnLab</string>
 
     <string name="menu_text_header">Выбирите тему</string>
-    <string name="menu_text_start">Начать тест</string>
+    <string name="text_start">Начать тест</string>
+    <string name="text_exit">Кнопка для выхода в меню</string>
+
 
     <string name="test_logo_level1">Тест</string>
     <string name="test_button_exit_level1">Выйти</string>
