@@ -1,5 +1,4 @@
-package com.example.javalearnlab.Topic1;
-
+package com.example.javalearnlab.Topic4;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.javalearnlab.R;
 import com.example.javalearnlab.Suport.TheorySection;
+import com.example.javalearnlab.Topic1.Test1;
 
 public class Theory extends AppCompatActivity {
     //Код выполняемый, при запуске окна
@@ -38,11 +38,11 @@ public class Theory extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startButtonTest.setTextAppearance(R.style.main_menu_button);
-                Intent intent = new Intent(Theory.this, Test1.class);
+                Intent intent = new Intent(com.example.javalearnlab.Topic4.Theory.this, Test1.class);
                 startActivity(intent);
             }
         });
-        
+
         //Вызов метода для заполнения экрана информацией
         completionText();
     }
@@ -54,10 +54,17 @@ public class Theory extends AppCompatActivity {
 
         //Элементы с текстом
         TheorySection[] sections = {
-                new TheorySection("topic1_theory_text1_1", null),
-                new TheorySection( "topic1_theory_text1_2", "topic1_theory_code1"),
-                new TheorySection("topic1_theory_text2_1", null),
-                new TheorySection("topic1_theory_text2_2", "topic1_theory_code2")
+                new TheorySection("topic4_theory_text1_1", null),
+                new TheorySection("topic4_theory_text1_2", null),
+                new TheorySection("topic4_theory_text1_3", "topic4_theory_code1"),
+                new TheorySection("topic4_theory_text1_4", "topic4_theory_code2"),
+                new TheorySection("topic4_theory_text2_1", null),
+                new TheorySection("topic4_theory_text2_2", "topic4_theory_code3"),
+                new TheorySection("topic4_theory_text2_3", "topic4_theory_code4"),
+                new TheorySection("topic4_theory_text2_4", "topic4_theory_code5"),
+                new TheorySection("topic4_theory_text3_1", null),
+                new TheorySection("topic4_theory_text3_2", "topic4_theory_code6"),
+                new TheorySection("topic4_theory_text3_3", null)
         };
 
         // Заполняем контейнер в цикле

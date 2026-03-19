@@ -17,6 +17,30 @@
             android:name=".Topic1.Theory"
             android:exported="false" />
         <activity
+            android:name=".Topic2.Theory"
+            android:exported="false" />
+        <activity
+            android:name=".Topic3.Theory"
+            android:exported="false" />
+        <activity
+            android:name=".Topic4.Theory"
+            android:exported="false" />
+        <activity
+            android:name=".Topic5.Theory"
+            android:exported="false" />
+        <activity
+            android:name=".Topic6.Theory"
+            android:exported="false" />
+        <activity
+            android:name=".Topic7.Theory"
+            android:exported="false" />
+        <activity
+        android:name=".Topic8.Theory"
+        android:exported="false" />
+        <activity
+            android:name=".Topic9.Theory"
+            android:exported="false" />
+        <activity
             android:name=".MainMenu.MainMenu"
             android:exported="true">
             <intent-filter>

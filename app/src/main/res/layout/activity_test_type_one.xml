@@ -1,64 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Topic1.Test1"
-    android:background="@color/menu_bg">
+    android:background="@color/background">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="70dp"
-        android:background="@color/background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+    <!-- Верхнее меню (App Bar) -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/menu_bg"
+        app:elevation="4dp">
+
+        <!--
+            Toolbar с флагами прокрутки.
+            scroll: меню будет прокручиваться вместе с контентом.
+            enterAlways: меню появится сразу, как только пользователь начнет скроллить вверх.
+            snap: меню не застрянет на половине, оно либо полностью скроется, либо появится.
+        -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            app:contentInsetStart="0dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/menu_bg"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/button_exit_menu"
+                            style="@style/button_exit"
+                            />
+
+                    </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             android:gravity="center">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                android:layout_margin="10dp">
 
                 <Button
-                    android:id="@+id/button"
-                    android:layout_width="164dp"
-                    android:layout_height="64dp"
-                    android:text="Button"/>
+                    style="@style/button_test_type_one"
+                    android:text="Какой-то вариант ответа"/>
+                <Button
+                    style="@style/button_test_type_one"
+                    android:text="Какой-то вариант ответа"/>
+                <Button
+                    style="@style/button_test_type_one"
+                    android:text="Какой-то вариант ответа"/>
+                <Button
+                    style="@style/button_test_type_one"
+                    android:text="Какой-то вариант ответа"/>
+                <Button
+                    style="@style/button_test_type_one"
+                    android:text="Какой-то вариант ответа"/>
+
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
                 android:orientation="vertical">
 
-
                 <Button
-                    android:id="@+id/button2"
-                    android:layout_width="164dp"
-                    android:layout_height="64dp"
-                    android:text="Button" />
+                    style="@style/button_test_type_one"
+                    android:text="Какой-то вариант ответа" />
+                <Button
+                    style="@style/button_test_type_one"
+                    android:text="Какой-то вариант ответа"/>
+                <Button
+                    style="@style/button_test_type_one"
+                    android:text="Какой-то вариант ответа"/>
+                <Button
+                    style="@style/button_test_type_one"
+                    android:text="Какой-то вариант ответа"/>
+                <Button
+                    style="@style/button_test_type_one"
+                    android:text="Какой-то вариант ответа"/>
 
             </LinearLayout>
 
         </LinearLayout>
-    </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
