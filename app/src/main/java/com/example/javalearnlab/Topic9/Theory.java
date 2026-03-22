@@ -22,7 +22,7 @@ public class Theory extends AppCompatActivity {
 
         //Заголовок страницы
         TextView label = findViewById(R.id.text_topic_title);
-        label.setText(R.string.label_topic1);
+        label.setText(R.string.label_topic9);
 
         //Кнопка выхода из теории
         ImageButton exitButton = findViewById(R.id.button_exit_menu);
@@ -76,9 +76,7 @@ public class Theory extends AppCompatActivity {
                 new TheorySection("topic9_theory_text3_5", "topic9_theory_code7"),
                 new TheorySection("topic9_theory_text4_1", "topic9_theory_code8"),
                 new TheorySection("topic9_theory_text4_2", "topic9_theory_code9"),
-                new TheorySection("topic9_theory_text5_1", null),
-                new TheorySection("topic9_theory_text5_2", "topic9_theory_code10"),
-                new TheorySection("topic9_theory_text5_3", "topic9_theory_code11")
+                new TheorySection("topic9_theory_text5_1", "topic9_theory_code10")
         };
 
         // Заполняем контейнер в цикле

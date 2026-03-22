@@ -22,7 +22,7 @@ public class Theory extends AppCompatActivity {
 
         //Заголовок страницы
         TextView label = findViewById(R.id.text_topic_title);
-        label.setText(R.string.label_topic1);
+        label.setText(R.string.label_topic8);
 
         //Кнопка выхода из теории
         ImageButton exitButton = findViewById(R.id.button_exit_menu);
