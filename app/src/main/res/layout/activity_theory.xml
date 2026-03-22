@@ -104,7 +104,7 @@
                 android:textColor="@color/main_menu_button_text"
                 android:textSize="18sp" />
 
-            <!-- Пустое пространство снизу для удобства скролла -->
+            <!-- Пустое пространство снизу -->
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="30dp"/>

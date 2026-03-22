@@ -24,8 +24,8 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
 
 
-        buttonTopic2 = findViewById(R.id.topic_1);
-        buttonTopic2.setOnClickListener(new View.OnClickListener() {
+        buttonTopic1 = findViewById(R.id.topic_1);
+        buttonTopic1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenu.this, com.example.javalearnlab.Topic1.Theory.class);
@@ -97,8 +97,8 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
-        buttonTopic8 = findViewById(R.id.topic_9);
-        buttonTopic8.setOnClickListener(new View.OnClickListener() {
+        buttonTopic9 = findViewById(R.id.topic_9);
+        buttonTopic9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenu.this, com.example.javalearnlab.Topic9.Theory.class);

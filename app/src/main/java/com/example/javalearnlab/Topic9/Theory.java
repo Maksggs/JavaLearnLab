@@ -74,9 +74,7 @@ public class Theory extends AppCompatActivity {
                 new TheorySection("topic9_theory_text3_3", "topic9_theory_code5"),
                 new TheorySection("topic9_theory_text3_4", "topic9_theory_code6"),
                 new TheorySection("topic9_theory_text3_5", "topic9_theory_code7"),
-                new TheorySection("topic9_theory_text4_1", "topic9_theory_code8"),
-                new TheorySection("topic9_theory_text4_2", "topic9_theory_code9"),
-                new TheorySection("topic9_theory_text5_1", "topic9_theory_code10")
+                new TheorySection("topic9_theory_text4_1", "topic9_theory_code8")
         };
 
         // Заполняем контейнер в цикле

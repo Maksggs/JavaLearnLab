@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/menu_bg"
+    android:paddingTop="18dp"
+
     >
 
     <TextView
@@ -87,7 +89,9 @@
                 android:text="@string/label_topic9"
                 style="@style/main_menu_button"
                 />
-
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
         </LinearLayout>
     </ScrollView>
 

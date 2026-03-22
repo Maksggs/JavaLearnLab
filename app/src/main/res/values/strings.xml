@@ -502,12 +502,4 @@
 
     <string name="topic9_theory_code8">// Выводим элементы массива\nSystem.out.println("Элементы двумерного массива:");\nfor (int i = 0; i &lt; array.length; i++) {\n\t\t    for (int j = 0; j &lt; array[i].length; j++) {\n\t\t\t\t        System.out.print(array[i][j] + \"\\t\"); // Выводим элементы с табуляцией\n\t\t    }\n\t\t    System.out.println(); // Переход на новую строку после каждой строки массива\n\t\t}</string>
 
-    <string name="topic9_theory_text4_2">\t\t\t\tСамый короткий способ вывести список элементов двумерного массива на экран — применение метода deepToString класса Arrays.</string>
-
-    <string name="topic9_theory_code9">import java.util.Arrays;\n\npublic class Main {\n\t\t    public static void main(String[] args) {\n\t\t\t\t        int[][] array = {{18,28,18},{28,45,90},{45,3,14}};\n\t\t\t\tSystem.out.println(Arrays.\ndeepToString(array));\n\t\t    }\n}</string>
-
-    <string name="topic9_theory_text5_1">\t\t\t\tВывод программы:</string>
-
-    <string name="topic9_theory_code10">[[18, 28, 18], [28, 45, 90], [45, 3, 14]]</string>
-
 </resources>
