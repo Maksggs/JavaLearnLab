@@ -11,7 +11,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JavaLearnLab">
         <activity
-            android:name=".Topic1.Test1"
+            android:name=".Topic1.TestsMain"
+            android:exported="false" />
+        <activity
+            android:name=".Topic2.TestsMain"
+            android:exported="false" />
+        <activity
+            android:name=".Topic3.TestsMain"
+            android:exported="false" />
+        <activity
+            android:name=".Topic4.TestsMain"
+            android:exported="false" />
+        <activity
+            android:name=".Topic5.TestsMain"
+            android:exported="false" />
+        <activity
+            android:name=".Topic6.TestsMain"
+            android:exported="false" />
+        <activity
+            android:name=".Topic7.TestsMain"
+            android:exported="false" />
+        <activity
+            android:name=".Topic8.TestsMain"
+            android:exported="false" />
+        <activity
+            android:name=".Topic9.TestsMain"
             android:exported="false" />
         <activity
             android:name=".Topic1.Theory"

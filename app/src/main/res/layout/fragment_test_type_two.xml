@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    >
+
+    <TextView
+        android:id="@+id/layout_test_type_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="df"
+        android:layout_marginHorizontal="22sp"
+        android:layout_marginTop="32dp"
+        android:textSize="22sp"
+        android:textColor="@color/plan_text_theory"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Группа для вариантов ответов -->
+        <RadioGroup
+            android:id="@+id/rg_answers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Вариант ответа 1 -->
+            <RadioButton
+                android:id="@+id/rb_answer_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Вариант ответа 1"
+
+                style="@style/test_radio_button"/>
+
+            <!-- Вариант ответа 2 -->
+            <RadioButton
+                android:id="@+id/rb_answer_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Вариант ответа 2"
+                style="@style/test_radio_button"/>
+
+            <!-- Вариант ответа 3 -->
+            <RadioButton
+                android:id="@+id/rb_answer_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Вариант ответа 3"
+                style="@style/test_radio_button" />
+
+            <!-- Вариант ответа 4 -->
+            <RadioButton
+                android:id="@+id/rb_answer_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Вариант ответа 4"
+                style="@style/test_radio_button" />
+
+        </RadioGroup>
+    </LinearLayout>
+</LinearLayout>

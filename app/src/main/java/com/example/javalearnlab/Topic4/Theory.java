@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.javalearnlab.R;
 import com.example.javalearnlab.Suport.TheorySection;
-import com.example.javalearnlab.Topic1.Test1;
+import com.example.javalearnlab.Topic1.TestsMain;
 
 public class Theory extends AppCompatActivity {
     //Код выполняемый, при запуске окна
@@ -37,8 +37,7 @@ public class Theory extends AppCompatActivity {
         startButtonTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startButtonTest.setTextAppearance(R.style.main_menu_button);
-                Intent intent = new Intent(com.example.javalearnlab.Topic4.Theory.this, Test1.class);
+                Intent intent = new Intent(com.example.javalearnlab.Topic4.Theory.this, com.example.javalearnlab.Topic4.TestsMain.class);
                 startActivity(intent);
             }
         });

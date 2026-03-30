@@ -37,8 +37,7 @@ public class Theory extends AppCompatActivity {
         startButtonTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startButtonTest.setTextAppearance(R.style.main_menu_button);
-                Intent intent = new Intent(Theory.this, Test1.class);
+                Intent intent = new Intent(Theory.this, TestsMain.class);
                 startActivity(intent);
             }
         });

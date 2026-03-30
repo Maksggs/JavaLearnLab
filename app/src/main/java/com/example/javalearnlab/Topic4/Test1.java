@@ -1,4 +1,4 @@
-package com.example.javalearnlab.Topic1;
+package com.example.javalearnlab.Topic4;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -46,22 +46,23 @@ public class Test1 extends Fragment {
 
     private void initView(View view) {
         TextView layout = view.findViewById(R.id.layout_test_type_two);
-        layout.setText("Инженеру нужно объединить три команды (проверка связи, запуск двигателя, подача тока) в одну логическую группу (блок кода). Какие символы он должен использовать для «обертки» этих команд?\n");
+        layout.setText("В чем главное отличие константы от переменной в Java?");
 
-        RadioButton rb1, rb2, rb3, rb4;
+        RadioButton rb1, rb2, rb3;
         rb1 = view.findViewById(R.id.rb_answer_1);
         rb2 = view.findViewById(R.id.rb_answer_2);
         rb3 = view.findViewById(R.id.rb_answer_3);
-        rb4 = view.findViewById(R.id.rb_answer_4);
 
-        rb1.setText("( ) — круглые скобки");
-        rb2.setText("{ } — фигурные скобки");
-        rb3.setText("[ ] — квадратные скобки");
-        rb4.setText("< > — угловые скобки");
+        // Hide the 4th radio button since we only have 3 options
+        RadioButton rb4 = view.findViewById(R.id.rb_answer_4);
+        rb4.setVisibility(View.GONE);
+
+        rb1.setText("Константы всегда хранят только числа.");
+        rb2.setText("Константе можно присвоить значение только один раз.");
+        rb3.setText("Константы занимают меньше места в памяти.");
 
         radioGroup = view.findViewById(R.id.rg_answers);
 
-        // Восстанавливаем выбранный ответ при возврате на вопрос
         if (selectedAnswerId != -1) {
             radioGroup.check(selectedAnswerId);
         }
@@ -71,7 +72,6 @@ public class Test1 extends Fragment {
         radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId != -1 && !isAnswered) {
                 selectedAnswerId = checkedId;
-                // Автоматически проверяем ответ при выборе
                 checkAnswer();
             }
         });
@@ -85,32 +85,26 @@ public class Test1 extends Fragment {
         isAnswered = true;
         isCorrect = (selectedAnswerId == CORRECT_ANSWER_ID);
 
-        // Визуально показываем правильность ответа
         if (isCorrect) {
-            // Подсвечиваем зеленым выбранный ответ
             RadioButton selectedButton = radioGroup.findViewById(selectedAnswerId);
             if (selectedButton != null) {
                 selectedButton.setBackgroundColor(getResources().getColor(android.R.color.holo_green_light));
             }
         } else {
-            // Подсвечиваем красным выбранный ответ
             RadioButton selectedButton = radioGroup.findViewById(selectedAnswerId);
             if (selectedButton != null) {
                 selectedButton.setBackgroundColor(getResources().getColor(android.R.color.holo_red_light));
             }
-            // Подсвечиваем зеленым правильный ответ
             RadioButton correctButton = radioGroup.findViewById(CORRECT_ANSWER_ID);
             if (correctButton != null) {
                 correctButton.setBackgroundColor(getResources().getColor(android.R.color.holo_green_light));
             }
         }
 
-        // Блокируем RadioGroup после ответа
         for (int i = 0; i < radioGroup.getChildCount(); i++) {
             radioGroup.getChildAt(i).setEnabled(false);
         }
 
-        // Уведомляем активность
         if (listener != null) {
             listener.onAnswerChecked(getAdapterPosition(), isCorrect, isAnswered);
         }

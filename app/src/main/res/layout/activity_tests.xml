@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/menu_bg"
+    android:orientation="vertical">
+
+    <!-- Верхняя панель с кнопкой выхода и индикатором -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@color/menu_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingVertical="12dp">
+
+        <ImageButton
+            android:id="@+id/button_exit_menu"
+            style="@style/button_exit" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/menu_bg"
+            android:layout_marginHorizontal="20dp"
+            app:tabTextColor="@color/plan_text_theory" />
+    </LinearLayout>
+
+    <!-- Контейнер для ViewPager2 -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager_test"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Нижняя панель с кнопками навигации -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp"
+        android:background="@color/menu_bg">
+
+        <Button
+            android:id="@+id/btn_previous"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="◀ Предыдущий"
+            android:backgroundTint="@color/button_topics"
+            android:textColor="@color/plan_text_theory" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Следующий ▶"
+            android:backgroundTint="@color/button_topics"
+            android:textColor="@color/plan_text_theory" />
+    </LinearLayout>
+
+</LinearLayout>

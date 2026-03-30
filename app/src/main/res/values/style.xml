@@ -36,5 +36,13 @@
         <item name="android:textColor">@color/plan_text_theory</item>
         <item name="android:layout_width">match_parent</item>
     </style>
+    <style name="test_radio_button" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:text">22sp</item>
+        <item name="android:layout_marginVertical">8dp</item>
+        <item name="android:background">@drawable/radio_button_background</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textColor">@color/plan_text_theory</item>
+
+    </style>
 
 </resources>
