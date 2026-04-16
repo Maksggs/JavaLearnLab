@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Java Learn Lab</string>
+    <string name="app_name">Java Easy</string>
 
     <string name="menu_text_header">Выберите тему</string>
     <string name="text_start">Начать тест</string>
