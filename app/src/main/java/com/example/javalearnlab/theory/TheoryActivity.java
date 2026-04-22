@@ -26,9 +26,10 @@ public class TheoryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_theory);
-
+        ProgressManager.markDay(this);
         container = findViewById(R.id.theoryContainer);
 
         int topicId = getIntent().getIntExtra("topic_id", -1);

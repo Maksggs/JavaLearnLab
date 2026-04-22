@@ -1,17 +1,25 @@
 package com.example.javalearnlab.ui.main;
 
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.javalearnlab.R;
+import com.example.javalearnlab.utils.AuthManager;
+import com.example.javalearnlab.utils.NetworkReceiver;
+import com.example.javalearnlab.utils.ProgressManager;
+import com.example.javalearnlab.utils.ReminderManager;
+import com.example.javalearnlab.utils.SettingsPrefs;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
     private ViewPager2 viewPager;
     private BottomNavigationView bottomNav;
+    private NetworkReceiver networkReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,5 +44,33 @@ public class MainActivity extends AppCompatActivity {
             else if (item.getItemId() == R.id.menu_profile) viewPager.setCurrentItem(1);
             return true;
         });
+
+        if (AuthManager.isLogged(this)) {
+            ProgressManager.syncFromServer(this, () -> {});
+            scheduleReminderIfNeeded();
+        }
+
+        // Регистрируем ресивер для отслеживания сети
+        networkReceiver = new NetworkReceiver();
+        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(networkReceiver, filter);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (networkReceiver != null) {
+            unregisterReceiver(networkReceiver);
+        }
+    }
+
+    private void scheduleReminderIfNeeded() {
+        if (AuthManager.isLogged(this) && SettingsPrefs.isReminderEnabled(this)) {
+            int hour = SettingsPrefs.getReminderHour(this);
+            int minute = SettingsPrefs.getReminderMinute(this);
+            ReminderManager.scheduleReminder(this, hour, minute);
+        } else {
+            ReminderManager.cancelReminder(this);
+        }
     }
 }

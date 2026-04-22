@@ -1,31 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/blue"
-    android:paddingTop="0dp"
-    >
+    android:paddingTop="48dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="48dp"
-        android:background="@color/white"
         android:orientation="vertical"
-        >
-        <TextView
-            android:id="@+id/progressText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+        android:background="@color/white"
+        android:paddingHorizontal="24dp">
+
         <Button
-            android:id="@+id/resetButton"
+            android:id="@+id/settings"
+            android:text="⚙"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="c.hjc"/>
+            android:padding="0dp"
+            android:layout_gravity="right"
+            android:backgroundTint="@color/blue"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Прогресс:"
+            android:textColor="@color/black"
+            android:layout_marginTop="8dp" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progressTint="@color/blue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Активность за последние 14 дней:"
+            android:textColor="@color/black"
+            android:layout_marginTop="16dp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:id="@+id/calendarContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:text="Войти"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/blue"
+            android:textColor="@color/white" />
+
     </LinearLayout>
 
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

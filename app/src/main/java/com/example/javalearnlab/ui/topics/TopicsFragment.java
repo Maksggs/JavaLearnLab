@@ -2,9 +2,11 @@ package com.example.javalearnlab.ui.topics;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +16,7 @@ import com.example.javalearnlab.R;
 import com.example.javalearnlab.data.TheoryRepository;
 import com.example.javalearnlab.theory.TheoryActivity;
 import com.example.javalearnlab.theory.model.Topic;
+import com.example.javalearnlab.utils.AuthManager;
 import com.example.javalearnlab.utils.ProgressManager;
 
 import java.util.List;
@@ -34,33 +37,36 @@ public class TopicsFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        loadTopics(); // 🔄 обновляем каждый раз
+        loadTopics();
     }
 
     private void loadTopics() {
+        container.removeAllViews();
 
-        container.removeAllViews(); // ❗ очищаем старые кнопки
+        if (!AuthManager.isLogged(requireContext())) {
+            TextView message = new TextView(requireContext());
+            message.setText("Войдите в аккаунт, чтобы открыть темы");
+            message.setTextColor(getResources().getColor(R.color.black));
+            message.setTextSize(18);
+            message.setGravity(Gravity.CENTER);
+            container.addView(message);
+            return;
+        }
 
         List<Topic> topics = TheoryRepository.loadTopics(requireContext());
 
         for (int i = 0; i < topics.size(); i++) {
-
             Topic topic = topics.get(i);
-
             boolean unlocked = ProgressManager.isUnlocked(requireContext(), topics, i);
 
-            int style = unlocked
-                    ? R.style.item_manu_topics_button
-                    : R.style.item_manu_topics_button_locked;
-
+            int style = unlocked ? R.style.item_manu_topics_button : R.style.item_manu_topics_button_locked;
             Button btn = new Button(requireContext(), null, 0, style);
             btn.setText(topic.title);
 
-            LinearLayout.LayoutParams params =
-                    new LinearLayout.LayoutParams(
-                            LinearLayout.LayoutParams.MATCH_PARENT,
-                            LinearLayout.LayoutParams.WRAP_CONTENT
-                    );
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
             params.setMargins(0, 16, 0, 0);
             btn.setLayoutParams(params);
 
@@ -77,7 +83,6 @@ public class TopicsFragment extends Fragment {
             }
 
             container.addView(btn);
-
         }
     }
 }

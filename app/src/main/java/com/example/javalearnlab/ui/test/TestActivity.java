@@ -10,6 +10,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.example.javalearnlab.R;
 import com.example.javalearnlab.theory.model.Question;
 import com.example.javalearnlab.ui.main.MainActivity;
+import com.example.javalearnlab.utils.AuthManager;
 import com.example.javalearnlab.utils.ProgressManager;
 import com.example.javalearnlab.utils.TestRepository;
 
@@ -57,7 +58,10 @@ public class TestActivity extends AppCompatActivity {
     private void showResult() {
 
         boolean success = correctAnswers == questions.size();
-
+        if (!AuthManager.isLogged(this)) {
+            finish();
+            return;
+        }
         if (success) {
             ProgressManager.markTestPassed(this, topicId);
         }
