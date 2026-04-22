@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="menu_bg">#87B2DC</color>
-    <color name="background">#E5EBF2</color>
-    <color name="button_topics">#81B2E2</color>
-    <color name="button_exit">#6897C4</color>
-    <color name="main_menu_button_text">#FDFDFD</color>
-    <color name="plan_text_theory">#000000</color>
-    <color name="bg_code_theory">#807B7B</color>
-    <color name="menu_tabe">#807B7B</color>
-
+    <color name="blue">#87B2DC</color>
+    <color name="white">#E5EBF2</color>
+    <color name="black">#181515</color>
+    <color name="gray">#403333</color>
+    <color name="code_background">#6D6D6D</color>
+    <color name="code_border">#333333</color>
+    <color name="code_text">#EAEAEA</color>
 </resources>

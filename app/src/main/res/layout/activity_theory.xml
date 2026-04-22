@@ -1,107 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="@color/white"
+    android:orientation="vertical">
 
-    <!-- Верхнее меню (App Bar) -->
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/menu_bg"
-        app:elevation="4dp">
 
-        <!--
-            Toolbar с флагами прокрутки.
-            scroll: меню будет прокручиваться вместе с контентом.
-            enterAlways: меню появится сразу, как только пользователь начнет скроллить вверх.
-            snap: меню не застрянет на половине, оно либо полностью скроется, либо появится.
-        -->
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
-            app:layout_scrollFlags="scroll|enterAlways|snap"
-            app:contentInsetStart="0dp">
-
-
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/white"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/blue"/>
+
+            <ScrollView
+                android:id="@+id/topic_theory_text"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:background="@color/menu_bg"
-                android:paddingVertical="12dp"
-                android:layout_marginTop="24dp">
+                android:orientation="vertical"
+                >
 
-                <!-- Ваша кнопка выхода/назад -->
-                <ImageButton
-                    android:id="@+id/button_exit_menu"
-                    style="@style/button_exit"  />
-
-                <!-- Заголовок (наименование темы) -->
-                <TextView
-                    android:id="@+id/text_topic_title"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:id="@+id/theoryContainer"
+                    android:orientation="vertical"
+                    android:paddingVertical="16dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="64dp"
-                    android:layout_marginStart="16dp"
-                    android:gravity="center_horizontal"
-                    android:ellipsize="end"
-                    android:maxLines="2"
-                    android:text="Наименование темы"
-                    android:textColor="@color/main_menu_button_text"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:layout_marginHorizontal="24dp"
+                    />
 
-            </LinearLayout>
-        </androidx.appcompat.widget.Toolbar>
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <!--
-        Контент страницы.
-        Вместо ScrollView используем NestedScrollView для работы с CoordinatorLayout.
-        app:layout_behavior указывает, что контент должен находиться ПОД AppBar.
-    -->
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <LinearLayout
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
-
-
-
-        <LinearLayout
-            android:id="@+id/topic_theory_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingHorizontal="24dp"
-            android:paddingVertical="16dp">
-
-        </LinearLayout>
+            </ScrollView>
             <!-- Кнопка начала теста -->
             <Button
                 android:id="@+id/button_start_test"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
                 android:layout_gravity="center_horizontal"
-                android:backgroundTint="@color/button_topics"
+                android:backgroundTint="@color/blue"
                 android:paddingHorizontal="32dp"
                 android:paddingVertical="12dp"
-                android:text="@string/text_start"
-                android:textColor="@color/main_menu_button_text"
+                android:text="Начать тест"
+                android:textColor="@color/white"
                 android:textSize="18sp" />
 
             <!-- Пустое пространство снизу -->
@@ -110,6 +57,5 @@
                 android:layout_height="30dp"/>
 
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</ScrollView>

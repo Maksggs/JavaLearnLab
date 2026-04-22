@@ -1,0 +1,214 @@
+{
+  "topics": [
+    {
+      "id": 1,
+      "title": "Структура программы",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Основной строительный блок программы на Java — инструкция (statement). Она выполняет действие: вызов метода, объявление переменной, присвоение значения. Конец инструкции обозначается точкой с запятой (;), которая сигнализирует компилятору об окончании инструкции."
+        },
+        {
+          "type": "code",
+          "content": "System.out.println(\"Привет, космос!\");"
+        },
+        {
+          "type": "text",
+          "content": "Кроме отдельных инструкций распространенной конструкцией является блок кода. Блок кода содержит набор инструкций, он заключается в фигурные скобки, а инструкции помещаются между открывающей и закрывающей фигурными скобками."
+        },
+        {
+          "type": "code",
+          "content": "{\n    System.out.println(\"Привет, космос!\");\n}"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Выполнение программы. Метод main",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Java является объектно-ориентированным языком, поэтому всю программу можно представить как набор взаимодействующих между собой классов и объектов. Основу программы на Java составляет класс — это как чертёж космического корабля. Он описывает, из чего состоит корабль, какие у него системы и что он умеет делать."
+        },
+        {
+          "type": "code",
+          "content": "public class Program {\n    // содержимое класса\n}"
+        },
+        {
+          "type": "text",
+          "content": "Входная точка программы — метод main. Он обязательно должен присутствовать, иначе программа не запустится. Виртуальная машина Java ищет именно этот метод и запускает его при старте приложения.\n\npublic — метод доступен извне;\nstatic — метод принадлежит классу, а не объекту (его можно вызвать без создания экземпляра класса);\nvoid — метод не возвращает значения;\nmain — имя метода (фиксированное, нельзя изменить);\nString[] args — параметр: массив строк, через который можно передать данные в программу при запуске."
+        },
+        {
+          "type": "code",
+          "content": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Привет, космос!\");\n    }\n}"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Консольный ввод/вывод в Java",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Для взаимодействия с консолью в Java применяется класс System, а его функциональность обеспечивает консольный ввод и вывод.\n\nВывод на консоль:\nДля создания потока вывода в классе System определен объект out. В этом объекте определен метод print, который позволяет вывести на консоль некоторое значение."
+        },
+        {
+          "type": "code",
+          "content": "public class Main {\n    public static void main(String[] args) {\n        System.out.print(\"В полёт, дружок!\");\n    }\n}"
+        },
+        {
+          "type": "text",
+          "content": "Для вывода с последующим переводом курсора на следующую строку используют метод System.out.println(). Символ \\n также позволяет осуществить переход на новую строку."
+        },
+        {
+          "type": "code",
+          "content": "System.out.println(\"Стоит ракета на старте,\");\nSystem.out.print(\"Готова к большой игре.\\n\");"
+        },
+        {
+          "type": "text",
+          "content": "Форматированный вывод осуществляется с помощью System.out.printf(). Спецификаторы: %d — целые числа, %f — числа с плавающей точкой, %s — строки, %c — символы, %x — шестнадцатеричные числа, %e — экспоненциальная форма."
+        },
+        {
+          "type": "code",
+          "content": "int x = 5;\nint y = 6;\nSystem.out.printf(\"x=%d; y=%d\\n\", x, y);\n\nString planet = \"Jupiter\";\nSystem.out.printf(\"Planet: %s Number: %d\\n\", planet, 5);"
+        },
+        {
+          "type": "text",
+          "content": "Ввод с консоли осуществляется с помощью класса Scanner, который использует System.in. Основные методы: next() — считывает строку до пробела, nextLine() — считывает всю строку, nextInt(), nextDouble(), nextBoolean(), nextByte(), nextFloat(), nextShort()."
+        },
+        {
+          "type": "code",
+          "content": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        System.out.print(\"Введи любую цифру: \");\n        int num = in.nextInt();\n        System.out.printf(\"Ваша цифра: %d\\n\", num);\n    }\n}"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Переменные и константы",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Переменная представляет именованную область памяти, которая хранит значение определенного типа. Каждая переменная имеет тип, имя и значение.\n\nИмя переменной может состоять из букв, цифр и знака подчёркивания, но не должно начинаться с цифры. Java различает регистр букв."
+        },
+        {
+          "type": "code",
+          "content": "int x;          // объявление переменной\nx = 10;         // присвоение значения\nint y = 25;     // объявление и инициализация\n\nSystem.out.println(x); // 10\nx = 25;\nSystem.out.println(x); // 25"
+        },
+        {
+          "type": "text",
+          "content": "Константы объявляются с ключевым словом final. Их значение можно присвоить только один раз. Обычно имена констант пишут в верхнем регистре."
+        },
+        {
+          "type": "code",
+          "content": "final int X = 5;\nSystem.out.println(X); // 5"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Типы данных",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "В Java у каждой переменной и константы должен быть чётко заданный тип данных. Система встроенных базовых типов данных:\n\n• boolean — хранит true или false\n• byte — целое число от -128 до 127 (1 байт)\n• short — целое число от -32768 до 32767 (2 байта)\n• int — целое число от -2³¹ до 2³¹-1 (4 байта)\n• long — целое число от -2⁶³ до 2⁶³-1 (8 байт)\n• double — число с плавающей точкой (8 байт)\n• float — число с плавающей точкой (4 байта)\n• char — одиночный символ в UTF-16 (2 байта)"
+        },
+        {
+          "type": "code",
+          "content": "boolean poweredOn = true;\nbyte daytimeTemperature = 120;\nshort distanceToAsteroid = 25000;\nint starsInGalaxy = 200_000_000;\nlong distanceToAndromeda = 23_000_000_000_000_000L;\ndouble massOfSirius = 2.02;\nfloat coreTempMercury = 7.0F;\nchar starSymbol = '★';"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Условные конструкции",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Условные конструкции позволяют программе выполнять разные действия в зависимости от условий. В Java есть два основных способа: if-else и switch-case.\n\nКонструкция if-else:\nif («если») — проверяет условие. Если оно верно (true), выполняет код внутри блока if.\nelse («иначе») — если условие в if не выполнилось, выполняет код внутри else.\nelse if («иначе если») — добавляет ещё одно условие, если первое не сработало."
+        },
+        {
+          "type": "code",
+          "content": "int oxygenLevel = 30;\n\nif (oxygenLevel > 20) {\n    System.out.println(\"Кислорода хватит для выхода в открытый космос!\");\n} else {\n    System.out.println(\"Осторожно! Кислорода мало. Остаёмся на корабле.\");\n}"
+        },
+        {
+          "type": "text",
+          "content": "Конструкция switch-case проверяет значение одной переменной и в зависимости от него выполняет нужный блок кода.\n\nswitch (переменная) — берёт значение переменной и сравнивает его с вариантами.\ncase значение: — ищет совпадение.\nbreak — завершает проверку (без break программа продолжит проверять следующие case).\ndefault — «запасной вариант», если ни одно из условий не подошло."
+        },
+        {
+          "type": "code",
+          "content": "int planetCode = 3;\n\nswitch (planetCode) {\n    case 1:\n        System.out.println(\"Курс на Меркурий!\");\n        break;\n    case 2:\n        System.out.println(\"Летим к Венере!\");\n        break;\n    case 3:\n        System.out.println(\"Активируем двигатели — цель: Земля!\");\n        break;\n    case 4:\n        System.out.println(\"Держим путь к Марсу!\");\n        break;\n    default:\n        System.out.println(\"Ошибка! Такой планеты в базе данных нет.\");\n}"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Циклы",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Циклы позволяют многократно выполнять однотипные действия. В Java есть три основных вида циклов:\n• for — когда заранее известно количество повторений;\n• while — когда нужно повторять, пока условие истинно;\n• do-while — похоже на while, но действие выполнится хотя бы один раз."
+        },
+        {
+          "type": "text",
+          "content": "Цикл for:\nСинтаксис: for (начальное значение; условие продолжения; шаг изменения) { // код }"
+        },
+        {
+          "type": "code",
+          "content": "System.out.println(\"Начинаем обратный отсчёт!\");\nfor (int i = 10; i > 0; i--) {\n    System.out.println(i + \" секунд до старта!\");\n}\nSystem.out.println(\"ПУСК! Двигатели запущены!\");"
+        },
+        {
+          "type": "text",
+          "content": "Цикл while:\nСинтаксис: while (условие) { // код выполняется, пока условие истинно }"
+        },
+        {
+          "type": "code",
+          "content": "int oxygenLevel = 100;\n\nwhile (oxygenLevel > 15) {\n    System.out.println(\"Кислорода достаточно: \" + oxygenLevel + \"% — можно работать.\");\n    oxygenLevel -= 10;\n}\nSystem.out.println(\"ВНИМАНИЕ! Кислорода осталось \" + oxygenLevel + \"%. Возвращаемся!\");"
+        },
+        {
+          "type": "text",
+          "content": "Цикл do-while:\nСинтаксис: do { // код выполнится хотя бы один раз } while (условие);"
+        },
+        {
+          "type": "code",
+          "content": "boolean dangerDetected = true;\nint sampleCount = 0;\n\ndo {\n    sampleCount++;\n    System.out.println(\"Взята проба грунта №\" + sampleCount);\n    if (sampleCount >= 3) {\n        dangerDetected = false;\n    }\n} while (dangerDetected);\nSystem.out.println(\"Сбор проб завершён. Всего взято: \" + sampleCount + \" проб.\");"
+        },
+        {
+          "type": "text",
+          "content": "Операторы continue и break:\n• break — позволяет выйти из цикла в любой момент, даже если цикл не закончил работу.\n• continue — пропускает текущую итерацию и переходит к следующей."
+        },
+        {
+          "type": "code",
+          "content": "for (int i = 0; i < 10; i++) {\n    if (i == 5)\n        break;\n    System.out.print(i + \" \");\n}\n// Вывод: 0 1 2 3 4"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Массивы. Одномерный массив",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Массив представляет набор однотипных значений. Индексация элементов массива начинается с нуля. Первый элемент имеет индекс 0, последний — длина_массива - 1.\n\nУ каждого массива есть свойство length, которое показывает длину массива.\n\nПорядок работы с массивом:\n1. Создание массива\n2. Заполнение массива (с клавиатуры, по формуле, случайными числами, при создании)\n3. Вывод массива на экран\n4. Обработка (решение задач, сортировка и т.д.)"
+        },
+        {
+          "type": "code",
+          "content": "// Создание массива\nint[] nums = new int[4];\n\n// Заполнение при создании\nint[] nums2 = {1, 2, 3, 5};\nint[] nums3 = new int[]{1, 2, 3, 5};\n\n// Установка значений по индексу\nnums[0] = 1;\nnums[1] = 2;\nnums[2] = 4;\nnums[3] = 100;\n\n// Получение значения\nSystem.out.println(nums[2]); // 4\n\n// Длина массива\nSystem.out.println(\"Длина массива: \" + nums.length);\n\n// Заполнение с клавиатуры\nfor (int i = 0; i < array.length; i++) {\n    array[i] = scanner.nextInt();\n}\n\n// Заполнение по формуле\nfor (int i = 0; i < array.length; i++) {\n    array[i] = i * i;\n}\n\n// Заполнение случайными числами\nRandom random = new Random();\nfor (int i = 0; i < arraySize; i++) {\n    array[i] = random.nextInt(100);\n}\n\n// Вывод массива\nfor (int i = 0; i < array.length; i++) {\n    System.out.println(\"Элемент \" + i + \": \" + array[i]);\n}"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Массивы. Двумерный массив",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Двумерный массив можно представить как таблицу с строками и столбцами. Левый индекс определяет строку, правый — столбец.\n\nПорядок работы с двумерным массивом аналогичен одномерному: создание, заполнение, вывод, обработка."
+        },
+        {
+          "type": "code",
+          "content": "// Создание двумерного массива\nint[][] tArray = new int[3][4];\nint[][] array = new int[5][5];\n\n// Заполнение при создании\nint[][] tArray2 = {{5,7,3,17}, {7,0,1,12}, {8,1,2,3}};\n\n// Заполнение с клавиатуры (вложенные циклы)\nfor (int i = 0; i < array.length; i++) {\n    for (int j = 0; j < array[i].length; j++) {\n        array[i][j] = scanner.nextInt();\n    }\n}\n\n// Заполнение по формуле\nint k = 0;\nfor (int i = 0; i < array.length; i++) {\n    for (int j = 0; j < array[i].length; j++) {\n        array[i][j] = k * k;\n        k++;\n    }\n}\n\n// Заполнение случайными числами\nRandom random = new Random();\nfor (int i = 0; i < array.length; i++) {\n    for (int j = 0; j < array[i].length; j++) {\n        array[i][j] = random.nextInt(100);\n    }\n}\n\n// Вывод двумерного массива (вложенные циклы)\nfor (int i = 0; i < array.length; i++) {\n    for (int j = 0; j < array[i].length; j++) {\n        System.out.print(array[i][j] + \"\\t\");\n    }\n    System.out.println();\n}\n\n// Быстрый вывод с помощью Arrays.deepToString()\nimport java.util.Arrays;\nSystem.out.println(Arrays.deepToString(array));"
+        }
+      ]
+    }
+  ]
+}
